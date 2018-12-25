@@ -151,3 +151,22 @@ const reversed = num.toString().split('').reverse().join('');
 //     123
 }
 */
+//--------------------------------------------------------------------
+
+
+
+
+//                         Max Character problem
+// Note to self... methods are good for other string related problems
+
+// --- Directions
+// Given a string, return the character that is most
+// commonly used in the string.
+// --- Examples
+// maxChar("abcccccccd") === "c"
+// maxChar("apple 1231111") === "1"
+
+function maxChar(str) {
+
+  
+}
