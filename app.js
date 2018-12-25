@@ -165,8 +165,54 @@ const reversed = num.toString().split('').reverse().join('');
 // --- Examples
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
+/* Commonly asked questions using same technique
 
-function maxChar(str) {
+What is the most common character in the string?
+Does string A have the same characters as string B (is it an anagram)?
+Does the given string have any repeated characters in it?
 
-  
+const string = "Hello There!";
+const chars = {};
+
+for(let char of string){
+ if(!chars)[char]{
+   chars[char] = 1;
+} else {
+   chars[char]++;
 }
+}
+ no if statement
+const string = "Hello There!";
+const chars = {};
+
+
+my approach ====
+for(let char of string) {
+chars[char] = chars[char] + 1 || 1; easier way IMO for breaking object apart
+}
+
+*/
+/*                         Answer 1 - long version
+/* The set up is easy... we want the max to continue to be replaced
+everytime the character amount is larger
+function maxChar(str) {
+  const cMap = {};
+  let max = 0;
+  let maxChar = '';
+
+for (let char of str){  // how to remember this of starts with o
+  if(cMap[char]){   // Ex. hello - l has 2 ... entry is there
+    cMap[char]++;   // h has 1 entry needs to be created
+  } else {         // other create the entry at 1
+    cMap[char] = 1;
+  }
+}
+ for (let char in cMap){   // how to remember in = interate through object
+   if(cMap[char] > max){    // so if 2 > 1 ..we keep larger number and set it to max
+     max = cMap[char];     // and not it stays as max until larger number takes place
+     maxChar = char;       //  char = the different letter we added to our object
+   }
+ }
+ return maxChar;
+}
+*/
