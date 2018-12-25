@@ -108,7 +108,7 @@ function palindrome(str) {
    return char === str.[str.length - i - 1];
  });
 }
-
+//-----------------------------------------------------------------
 
                     Reversing Integer Problem
 */
@@ -122,7 +122,32 @@ function palindrome(str) {
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {
+/*
+math.sign() = gives back 1 or -1
+toString() = turns numbers into strings...we can use array methods on these
+parseInt() = turns string back into number
+*/
+//                               Answer 1
 
-
+/*              321
+function reverse(num) {
+const reversed = num.toString().split('').reverse().join('');
+//                  "321"     "3""2""1"  "1""2""3"     "123"
+if (n < 0) {
+  return parseInt(reversed) * -1; // go down to solution 2
 }
+  return parseInt(reversed);
+//     123
+}
+
+//                               Answer 2
+
+//               321
+function reverse(num) {
+const reversed = num.toString().split('').reverse().join('');
+//                  "321"     "3""2""1"  "1""2""3"     "123"
+  return parseInt(reversed) * math.sign(num);
+
+//     123
+}
+*/
