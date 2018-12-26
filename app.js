@@ -336,7 +336,7 @@ Hello vs Ellho = true... Hello vs ellhos = false
 note to self... this has screwed up many of my past problems
 Know the difference!!
 */
-//                            Answer 1
+/*                            Answer 1
 function anagrams(stringA, stringB) {
 const aMap = buildCharMap(stringA);
 const aMap = buildCharMap(stringB);
@@ -361,4 +361,14 @@ function buildCharMap(str){
   return charMap;
 }
 
-//                            Answer 2
+*/
+//                           Answer 2
+// This answer is straight forward but would have efficiency issues but this is probably the most direct answer.
+function anagrams(stringA, stringB){
+  return cleanString(stringA) === cleanString(stringB);   //essentially what I'm doing here is literally comparing 2 objects
+}                                                         // Hello === ELLho = true  because of my cleanString Method with regexpress
+
+function cleanString(str){
+  return str.replace(/^\w/g, '').toLowerCase().split('').sort().join();   // this will make sure all spaces/uppercase/ are fixed
+                                                                         // also, need to make an array and turn it back into a string
+}
