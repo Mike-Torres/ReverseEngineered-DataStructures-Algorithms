@@ -232,7 +232,7 @@ for (let char of str){  // how to remember this of starts with o
 //   fizz
 //   4
 //   buzz
-//                                Answer 1 
+/*                                Answer 1
 function fizzBuzz(n) {
   for(let i = 1, i <= n ; i++){
     if(i % 3 === 0 && i % 5 === 0){
@@ -244,3 +244,18 @@ function fizzBuzz(n) {
     } else {
       console.log(i);
     }
+*/
+
+/*                                Answer 2  condense the for loop
+function fizzBuzz(n) {
+  for(let i = 1, i <= n ; i++){
+    if(i % 15 === 0){           already knowing that fizz will occur at 15/30/45, condense if and
+      console.log('fizzbuzz');
+    } else if(i % 3 === 0){
+      console.log('fizz');
+    } else if(i % 5 === 0){
+      console.log('buzz')
+    } else {
+      console.log(i);
+    }
+*/
