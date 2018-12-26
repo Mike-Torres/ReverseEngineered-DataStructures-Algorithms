@@ -353,7 +353,7 @@ if(Object.keys(aMap).length !== Object.keys(bMap).length){
 }
 
 function buildCharMap(str){
-  const charMap() = {};
+  const charMap = {};
 
   for(let char of str.replace(/[^\w]/g, '').toLowerCase()){
     charMap[char] = charMap[char] + 1 || 1;
@@ -362,13 +362,39 @@ function buildCharMap(str){
 }
 
 */
-//                           Answer 2
+/*                           Answer 2
 // This answer is straight forward but would have efficiency issues but this is probably the most direct answer.
 function anagrams(stringA, stringB){
   return cleanString(stringA) === cleanString(stringB);   //essentially what I'm doing here is literally comparing 2 objects
 }                                                         // Hello === ELLho = true  because of my cleanString Method with regexpress
 
 function cleanString(str){
-  return str.replace(/^\w/g, '').toLowerCase().split('').sort().join();   // this will make sure all spaces/uppercase/ are fixed
+  return str.replace(/^\w/g, '').toLowerCase().split('').sort().join('');   // this will make sure all spaces/uppercase/ are fixed
                                                                          // also, need to make an array and turn it back into a string
 }
+*/
+
+//---------------------------------------------------------------
+
+//                        Capitalization Question
+// --- Directions
+// Write a function that accepts a string.  The function should
+// capitalize the first letter of each word in the string then
+// return the capitalized string.
+// --- Examples
+//   capitalize('a short sentence') --> 'A Short Sentence'
+//   capitalize('a lazy fox') --> 'A Lazy Fox'
+//   capitalize('look, it is working!') --> 'Look, It Is Working!'
+
+/*                              Answer 1
+
+function capitalize(str) {
+  const words = [];
+
+  for(let word of str.split(' ')){
+    words.push(word[0].toUpperCase() + word.slice(1));
+  }
+return words.join(' ');
+}
+*/
+//                             
