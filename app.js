@@ -275,7 +275,7 @@ function fizzBuzz(n) {
 
 
 
-//                                          Answer 1
+/*                                          Answer 1
 function chunk(array, size) {
   let chunked = [];
   for(let element of array){
@@ -289,3 +289,20 @@ function chunk(array, size) {
   }
   return chunked;
 }
+*/
+
+//                           Answer 2
+/* Slice method directly put into array.
+ function chunk(array, size){
+   const chunked = [];
+   let index = 0;
+
+   while(index < array.length){
+    chunked.push(array.slice(index, index + size));
+    index += size;
+   }
+   return chunked;
+ }
+
+ */
+ //--------------------------------------------------------------
