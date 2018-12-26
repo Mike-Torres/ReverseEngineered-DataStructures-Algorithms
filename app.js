@@ -306,3 +306,59 @@ function chunk(array, size) {
 
  */
  //--------------------------------------------------------------
+
+
+//                             Anagrams
+ // --- Directions
+ // Check to see if two provided strings are anagrams of eachother.
+ // One string is an anagram of another if it uses the same characters
+ // in the same quantity. Only consider characters, not spaces
+ // or punctuation.  Consider capital letters to be the same as lower case
+ // --- Examples
+ //   anagrams('rail safety', 'fairy tales') --> True
+ //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
+ //   anagrams('Hi there', 'Bye there') --> False
+/*
+ use Regex = Regular Expressions:
+
+ example:
+ const word = "HI THERE!!!!!!"
+ word.replace(/[^\w]/g, '').toLowercase();
+*/
+/* Map this out.
+Hello vs Ellho = true... Hello vs ellhos = false
+1) Reminder to self... turn these into objects
+2) Comparing Hello Vs ellhos will mess up in comparison
+3) Compare the actual KEYS with in the object
+4) use 'in' for interating through object
+5) use 'of' for interating over array
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+note to self... this has screwed up many of my past problems
+Know the difference!!
+*/
+//                            Answer 1
+function anagrams(stringA, stringB) {
+const aMap = buildCharMap(stringA);
+const aMap = buildCharMap(stringB);
+
+if(Object.keys(aMap).length !== Object.keys(bMap).length){
+  return false;
+ }
+ for (let char in aMap){
+   if(aMap[char] !== bMap[char]){
+     return false;
+   }
+ }
+ return true;
+}
+
+function buildCharMap(str){
+  const charMap() = {};
+
+  for(let char of str.replace(/[^\w]/g, '').toLowerCase()){
+    charMap[char] = charMap[char] + 1 || 1;
+  }
+  return charMap;
+}
+
+//                            Answer 2
